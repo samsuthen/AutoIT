@@ -1,0 +1,33 @@
+
+
+1. Download Link : https://www.autoitscript.com/site/autoit/downloads/
+
+2. ``````````````````````````````````````
+
+    After Install 
+    - Open SCITE Editor copy and paste below commands
+
+    ``````````````````
+      Sleep(3000)
+      Send("File_path")
+      Sleep(3000)
+      ControlClick("File Upload","","Button1")
+
+      ``````````````````````````
+
+3. Rightclick AutoIT script file >> Compile (86) : It will generate exe file in the same location for this AU3 file
+
+4. Call Exe in Selenium Testcases folow the below commands to execut 
+      ```````````````````````
+
+
+          try
+          {
+            Runtime.getRuntime().exec("C:/Users/up.exe");
+            Thread.sleep(8000);
+          }catch(Exception e)
+          {
+            System.out.println("Unable to upload the file");
+          }
+
+      ```````````````````````
