@@ -1,0 +1,36 @@
+
+public class TextHandle {
+
+	public static void main(String[] args) {
+		String readFile = "C:/Users/anith/Desktop/file/f1.txt";
+		String writeFile = "C:/Users/anith/Desktop/file/test1.txt";
+		// reading contents from a text file
+		try {
+			InputStream ips = new FileInputStream(readFile);
+			InputStreamReader ipsr = new InputStreamReader(ips);
+			BufferedReader br = new BufferedReader(ipsr);
+
+			FileWriter fw = new FileWriter(writeFile);
+			BufferedWriter bw = new BufferedWriter(fw);
+			PrintWriter fileOut = new PrintWriter(bw);
+
+			String line;
+
+			String[] n = null;
+			while ((line = br.readLine()) != null) {
+				n = line.split(",");
+				for (int i = 0; i < n.length; i++) {
+					//System.out.print(n[i]);
+					 fileOut.println("\n"+n[i]);
+					 
+				}
+				//System.out.println("\n");
+			}
+			br.close();
+			fileOut.close();
+			
+		} catch (Exception e) {
+			System.out.println(e.toString());
+		}
+	}
+}
